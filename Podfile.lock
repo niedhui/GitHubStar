@@ -1,0 +1,20 @@
+
+PODS:
+- AFNetworking (1.0.1)
+- Mantle (0.2.2):
+  - libextobjc/EXTKeyPathCoding
+  - libextobjc/EXTScope
+- libextobjc/EXTKeyPathCoding (0.2.3)
+- libextobjc/EXTScope (0.2.3)
+
+DEPENDENCIES:
+- AFNetworking
+- Mantle
+
+SPEC CHECKSUMS:
+  AFNetworking: 4c11f857c9a18d65f4257c90a1e74ac49f0ac422
+  Mantle: 190df0e0b65c0ebc13f2ed39e99248e630ad2616
+  libextobjc/EXTKeyPathCoding: 7dcd66faf065d3b7fcb5f85a1646efaed28bcadf
+  libextobjc/EXTScope: 7dcd66faf065d3b7fcb5f85a1646efaed28bcadf
+
+COCOAPODS: 0.16.0.rc3
