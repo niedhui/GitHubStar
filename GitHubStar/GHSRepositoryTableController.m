@@ -49,6 +49,12 @@
     return cellView;
 }
 
+- (void) tableViewSelectionDidChange:(NSNotification *)notification {
+    NSInteger selectedRow = [self.tableView selectedRow];
+    GHSRepository *repo = self.currentRepsitories[selectedRow];
+    NSLog(@"selected %@", repo.name);
+    [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString:repo.HTMLURLString]];
+}
 
 
 - (void) iterateStarred:(NSUInteger) page {
