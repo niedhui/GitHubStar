@@ -16,11 +16,12 @@
 - (id) init {
     NSLog(@"GHSRepositoryTableController init");
     self = [super init];
-    if (!self) {
-        return nil;
+    if (self) {
+        self.repositories = [NSMutableArray array];
+        self.currentRepsitories = [NSMutableArray array];
+        [self iterateStarred:1];
+        _repositories_synched = NO;
     }
-    self.repositories = [NSMutableArray array];
-    [self iterateStarred:1];
     return self;
     
 }
@@ -30,14 +31,14 @@
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
-    NSLog(@"current count %ld", [self.repositories count]);
-    return [self.repositories count];
+    NSLog(@"current count %ld", [self.currentRepsitories count]);
+    return [self.currentRepsitories count];
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     NSString *identifier = [tableColumn identifier];
     NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
-    GHSRepository *repository = self.repositories[row];
+    GHSRepository *repository = self.currentRepsitories[row];
     if ([identifier isEqualToString:@"NameCell"]) {
         cellView.textField.stringValue = [NSString defaultValue:repository.name];
     } else if ([identifier isEqualToString:@"LanguageCell"]){
@@ -53,14 +54,30 @@
 - (void) iterateStarred:(NSUInteger) page {
     [[GHSApiClient sharedInstance] starredWithPage: page success:^(id returnedRepositories) {
         [self.repositories addObjectsFromArray:returnedRepositories];
-        [self.tableView reloadData];
+        NSLog(@"synch page %ld", page);
+//        [self.tableView reloadData];
         if ([returnedRepositories count] == 100) {
             [self iterateStarred:page + 1];
         } else {
-            NSLog(@"Done!");
-            
+            _repositories_synched = YES;
+            self.currentRepsitories = [NSArray arrayWithArray:self.repositories];
+            [self.tableView reloadData];
         }
     }];
+}
+
+- (IBAction)onSearch:(id)sender {
+    NSString *searchedString = [sender stringValue];
+    NSLog(@"on search %@", searchedString);
+    if ([searchedString length] == 0) {
+        self.currentRepsitories = [NSArray arrayWithArray:self.repositories];
+    } else {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name CONTAINS %@", searchedString];
+        self.currentRepsitories = [self.repositories filteredArrayUsingPredicate:predicate];
+        
+    }
+    [self.tableView reloadData];
+    
 }
 
 @end

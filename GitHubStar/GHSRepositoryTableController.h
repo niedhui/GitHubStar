@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GHSRepositoryTableController : NSObject<NSTableViewDataSource, NSTableViewDelegate>
+@interface GHSRepositoryTableController : NSObject<NSTableViewDataSource, NSTableViewDelegate> {
+    BOOL _repositories_synched;
+}
 
 @property (strong) NSMutableArray *repositories;
+@property (copy) NSArray *currentRepsitories;
 @property (weak) IBOutlet NSTableView *tableView;
+
+- (IBAction) onSearch: (id)sender;
 
 @end

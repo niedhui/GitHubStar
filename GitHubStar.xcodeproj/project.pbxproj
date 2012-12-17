@@ -22,7 +22,7 @@
 		C749454F1676F6CF0041D39D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C749454D1676F6CF0041D39D /* InfoPlist.strings */; };
 		C74945521676F6CF0041D39D /* GitHubStarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C74945511676F6CF0041D39D /* GitHubStarTests.m */; };
 		C749456F1676F9300041D39D /* GHSApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C749456E1676F9300041D39D /* GHSApiClient.m */; };
-		C7A8488E16776A8000C0F49E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A8488D16776A8000C0F49E /* SystemConfiguration.framework */; };
+		C7A8488E16776A8000C0F49E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A8488D16776A8000C0F49E /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C7A8489116776EFD00C0F49E /* GHSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A8489016776EFD00C0F49E /* GHSRepository.m */; };
 /* End PBXBuildFile section */
 
