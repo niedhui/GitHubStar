@@ -10,6 +10,7 @@
 #import "GHSApiClient.h"
 #import "GHSRepository.h"
 #import "NSString+Additions.h"
+#import "GHSCredentialStore.h"
 
 @implementation GHSRepositoryTableController
 
@@ -19,7 +20,12 @@
     if (self) {
         self.repositories = [NSMutableArray array];
         self.currentRepsitories = [NSMutableArray array];
-        [self iterateStarred:1];
+        _apiClient = [GHSApiClient sharedInstance];
+        _credentialStore = [[GHSCredentialStore alloc] init];
+        if ([_credentialStore hasLogin]) {
+            [self iterateStarred:1];
+        }
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(apiClientCredentialChanged:) name:@"api-client-credential-changed" object:nil];
         _repositories_synched = NO;
     }
     return self;
@@ -58,7 +64,7 @@
 
 
 - (void) iterateStarred:(NSUInteger) page {
-    [[GHSApiClient sharedInstance] starredWithPage: page success:^(id returnedRepositories) {
+    [_apiClient starredWithPage: page success:^(id returnedRepositories) {
         [self.repositories addObjectsFromArray:returnedRepositories];
         NSLog(@"synch page %ld", page);
 //        [self.tableView reloadData];
@@ -83,7 +89,13 @@
         
     }
     [self.tableView reloadData];
-    
 }
+
+- (void) apiClientCredentialChanged: (NSNotification *)notification {
+    if ([_credentialStore hasLogin]) {
+        [self iterateStarred:1];
+    }
+}
+
 
 @end

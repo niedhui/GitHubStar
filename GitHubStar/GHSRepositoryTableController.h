@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@class GHSApiClient;
+@class GHSCredentialStore;
 
 @interface GHSRepositoryTableController : NSObject<NSTableViewDataSource, NSTableViewDelegate> {
     BOOL _repositories_synched;
+    GHSApiClient *_apiClient;
+    GHSCredentialStore *_credentialStore;
 }
 
 @property (strong) NSMutableArray *repositories;

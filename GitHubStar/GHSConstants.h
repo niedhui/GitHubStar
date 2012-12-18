@@ -7,8 +7,8 @@
 //
 
 // TODO: use oAuth
-#define kGHUsername @"username"
-#define kGHPassword @"password"
+//#define kGHUsername @"username"
+//#define kGHPassword @"password"
 #define kBaseApiURL  @"https://api.github.com"
 #define kGHStarredURL @"/user/starred"
 #define kGHHttpAccept @"application/vnd.github.beta+json"

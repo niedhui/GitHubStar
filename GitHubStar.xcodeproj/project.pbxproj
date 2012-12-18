@@ -11,6 +11,8 @@
 		AF1D72E8077246B0AAC5E161 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E703D6D0EB4865BD675A0C /* libPods.a */; };
 		C70501D0167A3E5B00312EAA /* GHSRepositoryTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C70501CF167A3E5B00312EAA /* GHSRepositoryTableController.m */; };
 		C72ADEA31678D53700B716B8 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C72ADEA21678D53700B716B8 /* NSString+Additions.m */; };
+		C73F9BF0167F761200B7F67A /* GHSPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F9BEE167F761200B7F67A /* GHSPreferenceController.m */; };
+		C73F9BF1167F761200B7F67A /* GHSPreferenceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C73F9BEF167F761200B7F67A /* GHSPreferenceController.xib */; };
 		C74945281676F6CF0041D39D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74945271676F6CF0041D39D /* Cocoa.framework */; };
 		C74945321676F6CF0041D39D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C74945301676F6CF0041D39D /* InfoPlist.strings */; };
 		C74945341676F6CF0041D39D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C74945331676F6CF0041D39D /* main.m */; };
@@ -24,6 +26,7 @@
 		C749456F1676F9300041D39D /* GHSApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C749456E1676F9300041D39D /* GHSApiClient.m */; };
 		C7A8488E16776A8000C0F49E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A8488D16776A8000C0F49E /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C7A8489116776EFD00C0F49E /* GHSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A8489016776EFD00C0F49E /* GHSRepository.m */; };
+		C7B3B0751680B946009E6BC3 /* GHSCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B3B0741680B946009E6BC3 /* GHSCredentialStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		C70501CF167A3E5B00312EAA /* GHSRepositoryTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSRepositoryTableController.m; sourceTree = "<group>"; };
 		C72ADEA11678D53700B716B8 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		C72ADEA21678D53700B716B8 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		C73F9BED167F761200B7F67A /* GHSPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHSPreferenceController.h; sourceTree = "<group>"; };
+		C73F9BEE167F761200B7F67A /* GHSPreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSPreferenceController.m; sourceTree = "<group>"; };
+		C73F9BEF167F761200B7F67A /* GHSPreferenceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GHSPreferenceController.xib; sourceTree = "<group>"; };
 		C74945231676F6CF0041D39D /* GitHubStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74945271676F6CF0041D39D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C749452A1676F6CF0041D39D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -69,6 +75,8 @@
 		C7A8488D16776A8000C0F49E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C7A8488F16776EFD00C0F49E /* GHSRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHSRepository.h; sourceTree = "<group>"; };
 		C7A8489016776EFD00C0F49E /* GHSRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSRepository.m; sourceTree = "<group>"; };
+		C7B3B0731680B946009E6BC3 /* GHSCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHSCredentialStore.h; sourceTree = "<group>"; };
+		C7B3B0741680B946009E6BC3 /* GHSCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSCredentialStore.m; sourceTree = "<group>"; };
 		D44623C4BC63470E86ED1C63 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -156,6 +164,11 @@
 				C72ADEA21678D53700B716B8 /* NSString+Additions.m */,
 				C70501CE167A3E5B00312EAA /* GHSRepositoryTableController.h */,
 				C70501CF167A3E5B00312EAA /* GHSRepositoryTableController.m */,
+				C73F9BED167F761200B7F67A /* GHSPreferenceController.h */,
+				C73F9BEE167F761200B7F67A /* GHSPreferenceController.m */,
+				C73F9BEF167F761200B7F67A /* GHSPreferenceController.xib */,
+				C7B3B0731680B946009E6BC3 /* GHSCredentialStore.h */,
+				C7B3B0741680B946009E6BC3 /* GHSCredentialStore.m */,
 			);
 			path = GitHubStar;
 			sourceTree = "<group>";
@@ -268,6 +281,7 @@
 				C74945321676F6CF0041D39D /* InfoPlist.strings in Resources */,
 				C74945381676F6CF0041D39D /* Credits.rtf in Resources */,
 				C749453E1676F6CF0041D39D /* MainMenu.xib in Resources */,
+				C73F9BF1167F761200B7F67A /* GHSPreferenceController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +350,8 @@
 				C7A8489116776EFD00C0F49E /* GHSRepository.m in Sources */,
 				C72ADEA31678D53700B716B8 /* NSString+Additions.m in Sources */,
 				C70501D0167A3E5B00312EAA /* GHSRepositoryTableController.m in Sources */,
+				C73F9BF0167F761200B7F67A /* GHSPreferenceController.m in Sources */,
+				C7B3B0751680B946009E6BC3 /* GHSCredentialStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

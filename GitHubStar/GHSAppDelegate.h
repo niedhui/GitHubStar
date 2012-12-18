@@ -7,10 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class GHSPreferenceController;
+@class GHSCredentialStore;
 
-@interface GHSAppDelegate : NSObject <NSApplicationDelegate>
+@interface GHSAppDelegate : NSObject <NSApplicationDelegate> {
+    GHSPreferenceController *_preferenceController;
+    GHSCredentialStore *_credentialStore;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 
-
+- (IBAction)showPreferencePannel:(id)sender;
 @end

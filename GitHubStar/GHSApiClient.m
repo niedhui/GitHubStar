@@ -8,6 +8,7 @@
 
 #import "GHSApiClient.h"
 #import "GHSRepository.h"
+#import "GHSCredentialStore.h"
 
 @implementation GHSApiClient
 
@@ -26,13 +27,21 @@
         //custom settings
         [self setDefaultHeader: @"User-Agent" value: @"GitHubStar"];
         [self setDefaultHeader: @"Accept" value: kGHHttpAccept];
-        [self setAuthorizationHeaderWithUsername: kGHUsername password: kGHPassword];
-        [AFJSONRequestOperation addAcceptableContentTypes: [NSSet setWithObject: kGHHttpAccept]];
+        GHSCredentialStore *credentialStore = [[GHSCredentialStore alloc] init];
+        [self setAuthorizationHeaderWithUsername: [credentialStore email] password: [credentialStore password]];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(credentialChanged:) name:@"credential-changed" object:nil];
+        [AFJSONRequestOperation addAcceptableContentTypes: [NSSet setWithObject: kGHHttpAccept]];
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     }
     
     return self;
+}
+
+- (void) credentialChanged: (NSNotification *) notification {
+    GHSCredentialStore *credentialStore = [[GHSCredentialStore alloc] init];
+    [self setAuthorizationHeaderWithUsername: [credentialStore email] password: [credentialStore password]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"api-client-credential-changed" object:self];
 }
 
 - (void) starredWithPage: (NSUInteger) page
