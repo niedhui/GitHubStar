@@ -1409,6 +1409,11 @@
 													<bool key="NSIsResizeable">YES</bool>
 													<bool key="NSIsEditable">YES</bool>
 													<reference key="NSTableView" ref="300617274"/>
+													<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
+														<string key="NSKey">name</string>
+														<bool key="NSAscending">YES</bool>
+														<string key="NSSelector">caseInsensitiveCompare:</string>
+													</object>
 												</object>
 												<object class="NSTableColumn" id="74609897">
 													<string key="NSIdentifier">LanguageCell</string>
@@ -1436,6 +1441,11 @@
 													<bool key="NSIsResizeable">YES</bool>
 													<bool key="NSIsEditable">YES</bool>
 													<reference key="NSTableView" ref="300617274"/>
+													<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
+														<string key="NSKey">language</string>
+														<bool key="NSAscending">YES</bool>
+														<string key="NSSelector">caseInsensitiveCompare:</string>
+													</object>
 												</object>
 												<object class="NSTableColumn" id="213325249">
 													<string key="NSIdentifier">HTMLURLCell</string>
@@ -1471,6 +1481,11 @@
 													<bool key="NSIsResizeable">YES</bool>
 													<bool key="NSIsEditable">YES</bool>
 													<reference key="NSTableView" ref="300617274"/>
+													<object class="NSSortDescriptor" key="NSSortDescriptorPrototype">
+														<string key="NSKey">HTMLURLString</string>
+														<bool key="NSAscending">YES</bool>
+														<string key="NSSelector">caseInsensitiveCompare:</string>
+													</object>
 												</object>
 											</array>
 											<double key="NSIntercellSpacingWidth">3</double>
@@ -1526,6 +1541,7 @@
 									<string key="NSFrame">{{1, 324}, {489, 16}}</string>
 									<reference key="NSSuperview" ref="1002277706"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:60</string>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<int key="NSsFlags">1</int>

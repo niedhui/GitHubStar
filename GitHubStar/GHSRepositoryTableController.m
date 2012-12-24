@@ -33,7 +33,7 @@
 }
 
 - (void) awakeFromNib {
-    NSLog(@"GHSRepositoryTableController awake from nib");
+//    NSLog(@"GHSRepositoryTableController awake from nib");
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
@@ -57,11 +57,18 @@
 
 - (void) tableViewSelectionDidChange:(NSNotification *)notification {
     NSInteger selectedRow = [self.tableView selectedRow];
-    GHSRepository *repo = self.currentRepsitories[selectedRow];
-    NSLog(@"selected %@", repo.name);
-    [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString:repo.HTMLURLString]];
+    if (selectedRow > 0) {
+        GHSRepository *repo = self.currentRepsitories[selectedRow];
+        NSLog(@"selected %@", repo.name);
+        [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString:repo.HTMLURLString]];
+    }
 }
 
+- (void)tableView:(NSTableView *)tableView sortDescriptorsDidChange:(NSArray *)oldDescriptors {
+    NSArray *newDescriptors = [tableView sortDescriptors];
+    self.currentRepsitories = [self.currentRepsitories sortedArrayUsingDescriptors:newDescriptors];
+    [tableView reloadData];
+}
 
 - (void) iterateStarred:(NSUInteger) page {
     [_apiClient starredWithPage: page success:^(id returnedRepositories) {
@@ -95,6 +102,10 @@
     if ([_credentialStore hasLogin]) {
         [self iterateStarred:1];
     }
+}
+
+- (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
