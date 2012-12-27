@@ -25,7 +25,8 @@ extern NSString * const GHSStartFetchingPageNotification;
 @property (weak) IBOutlet NSTableView *tableView;
 @property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 @property (weak) IBOutlet NSTextField *statusLabel;
+@property (weak) IBOutlet NSButton *refreshButton;
 
 - (IBAction) onSearch: (id)sender;
-
+- (IBAction) refresh:(id)sender;
 @end

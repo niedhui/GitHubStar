@@ -87,7 +87,11 @@ NSString * const GHSStartFetchingPageNotification = @"GHSStartFetchingPageNotifi
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:GHSStartFetchingPageNotification object:nil userInfo:@{@"page" : @(page)}];
     [_apiClient starredWithPage: page success:^(id returnedRepositories) {
-        [self.repositories addObjectsFromArray:returnedRepositories];
+        for (GHSRepository *repo in returnedRepositories) {
+            if (![self.repositories containsObject:repo]) {
+                [self.repositories addObject:repo];
+            }
+        }
         if ([returnedRepositories count] == 100) {
             [self iterateStarred:page + 1];
         } else {
@@ -112,6 +116,9 @@ NSString * const GHSStartFetchingPageNotification = @"GHSStartFetchingPageNotifi
     [self.tableView reloadData];
 }
 
+- (IBAction)refresh:(id)sender {
+    [self iterateStarred:1];
+}
 
 # pragma mark notifications
 - (void) apiClientCredentialChanged: (NSNotification *)notification {
@@ -122,9 +129,11 @@ NSString * const GHSStartFetchingPageNotification = @"GHSStartFetchingPageNotifi
 
 - (void) startFetching: (NSNotification *) notification {
     [self.progressIndicator startAnimation:self];
+    [self.refreshButton setEnabled:NO];
 }
 
 - (void) finishFetching: (NSNotification *) notification {
+    [self.refreshButton setEnabled:YES];
     [self.progressIndicator stopAnimation:nil];
     self.statusLabel.stringValue = [NSString stringWithFormat:@"total repositories %ld", [self.repositories count]];
 }
