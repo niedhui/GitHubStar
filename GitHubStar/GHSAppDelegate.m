@@ -9,6 +9,7 @@
 #import "GHSAppDelegate.h"
 #import "GHSPreferenceController.h"
 #import "GHSCredentialStore.h"
+#import "GHSRepositoryTableController.h"
 
 @implementation GHSAppDelegate
 
@@ -19,6 +20,11 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSLog(@"applicationDidFinishLaunching");
     _credentialStore = [[GHSCredentialStore alloc] init];
+    if (!_repositoryController) {
+        _repositoryController = [[GHSRepositoryTableController alloc] initWithWindowNibName:@"GHSRepositoryTableController"];
+    }
+    [_repositoryController showWindow:self];
+    
     if (![_credentialStore hasLogin]) {
         [self showPreferencePannel:nil];
     }
@@ -31,6 +37,5 @@
     [_preferenceController showWindow:self];
     NSLog(@"show preference pannel");
 }
-
 
 @end
