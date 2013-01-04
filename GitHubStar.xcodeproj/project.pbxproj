@@ -10,6 +10,7 @@
 		503DCF597FAC48A4B2425961 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F45C5DCE3244C4B347B0FD /* libPods.a */; };
 		AF1D72E8077246B0AAC5E161 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E703D6D0EB4865BD675A0C /* libPods.a */; };
 		C70501D0167A3E5B00312EAA /* GHSRepositoryTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = C70501CF167A3E5B00312EAA /* GHSRepositoryTableController.m */; };
+		C7140E2516971C8B00143904 /* GHSRepoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7140E2416971C8B00143904 /* GHSRepoCellView.m */; };
 		C72ADEA31678D53700B716B8 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C72ADEA21678D53700B716B8 /* NSString+Additions.m */; };
 		C73F9BF0167F761200B7F67A /* GHSPreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F9BEE167F761200B7F67A /* GHSPreferenceController.m */; };
 		C73F9BF1167F761200B7F67A /* GHSPreferenceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C73F9BEF167F761200B7F67A /* GHSPreferenceController.xib */; };
@@ -46,6 +47,8 @@
 		B6E703D6D0EB4865BD675A0C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70501CE167A3E5B00312EAA /* GHSRepositoryTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHSRepositoryTableController.h; sourceTree = "<group>"; };
 		C70501CF167A3E5B00312EAA /* GHSRepositoryTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSRepositoryTableController.m; sourceTree = "<group>"; };
+		C7140E2316971C8B00143904 /* GHSRepoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHSRepoCellView.h; sourceTree = "<group>"; };
+		C7140E2416971C8B00143904 /* GHSRepoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSRepoCellView.m; sourceTree = "<group>"; };
 		C72ADEA11678D53700B716B8 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		C72ADEA21678D53700B716B8 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		C73F9BED167F761200B7F67A /* GHSPreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHSPreferenceController.h; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				C7B3B0731680B946009E6BC3 /* GHSCredentialStore.h */,
 				C7B3B0741680B946009E6BC3 /* GHSCredentialStore.m */,
 				C7733762168C98E6001E37B6 /* GHSRepositoryTableController.xib */,
+				C7140E2316971C8B00143904 /* GHSRepoCellView.h */,
+				C7140E2416971C8B00143904 /* GHSRepoCellView.m */,
 			);
 			path = GitHubStar;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				C70501D0167A3E5B00312EAA /* GHSRepositoryTableController.m in Sources */,
 				C73F9BF0167F761200B7F67A /* GHSPreferenceController.m in Sources */,
 				C7B3B0751680B946009E6BC3 /* GHSCredentialStore.m in Sources */,
+				C7140E2516971C8B00143904 /* GHSRepoCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

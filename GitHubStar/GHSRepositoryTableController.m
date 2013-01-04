@@ -11,6 +11,7 @@
 #import "GHSRepository.h"
 #import "NSString+Additions.h"
 #import "GHSCredentialStore.h"
+#import "GHSRepoCellView.h"
 
 NSString * const GHSStartFetchingNotification = @"GHSStartFetchingNotification";
 NSString * const GHSFinishFetchingNotification = @"GHSFinishFetchingNotification";
@@ -54,15 +55,17 @@ NSString * const GHSStartFetchingPageNotification = @"GHSStartFetchingPageNotifi
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     NSString *identifier = [tableColumn identifier];
-    NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
+    GHSRepoCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
     GHSRepository *repository = self.currentRepsitories[row];
-    if ([identifier isEqualToString:@"NameCell"]) {
+    cellView.repoNameField.stringValue = [NSString defaultValue:repository.name];
+    cellView.repoDescField.stringValue = [NSString defaultValue:repository.desc];
+    //    if ([identifier isEqualToString:@"NameCell"]) {
         cellView.textField.stringValue = [NSString defaultValue:repository.name];
-    } else if ([identifier isEqualToString:@"LanguageCell"]){
-        cellView.textField.stringValue = [NSString defaultValue:repository.language];
-    } else if ([identifier isEqualToString:@"HTMLURLCell"]){
-        cellView.textField.stringValue = [NSString defaultValue: repository.HTMLURLString];
-    }
+//    } else if ([identifier isEqualToString:@"LanguageCell"]){
+//        cellView.textField.stringValue = [NSString defaultValue:repository.language];
+//    } else if ([identifier isEqualToString:@"HTMLURLCell"]){
+//        cellView.textField.stringValue = [NSString defaultValue: repository.HTMLURLString];
+//    }
     return cellView;
 }
 

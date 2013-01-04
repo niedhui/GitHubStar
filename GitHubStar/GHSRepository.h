@@ -18,7 +18,7 @@
 
 @property(nonatomic, copy, readonly) NSString *HTMLURLString;
 
-@property(nonatomic, copy, readonly) NSString *description;
+@property(nonatomic, copy, readonly) NSString *desc;
 
 @end
 

@@ -15,7 +15,7 @@
                 @"name": @"name",
                 @"language": @"language",
                 @"HTMLURLString": @"html_url",
-                @"description": @"description"
+                @"desc": @"description"
     
             };
 }
