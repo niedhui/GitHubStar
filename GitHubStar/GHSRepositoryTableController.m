@@ -123,6 +123,17 @@ NSString * const GHSStartFetchingPageNotification = @"GHSStartFetchingPageNotifi
     [self iterateStarred:1];
 }
 
+# pragma mark keyboard event
+- (void) keyDown:(NSEvent *)theEvent {
+    NSLog(@"key down: %@ and code %d", theEvent.characters, theEvent.keyCode);
+    if (theEvent.keyCode == 51) {
+        self.searchField.stringValue = @"";
+        [self.searchField becomeFirstResponder];
+        self.currentRepsitories = self.repositories;
+        [self.tableView reloadData];
+    }
+}
+
 # pragma mark notifications
 - (void) apiClientCredentialChanged: (NSNotification *)notification {
     if ([_credentialStore hasLogin]) {

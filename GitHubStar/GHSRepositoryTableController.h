@@ -20,6 +20,7 @@ extern NSString * const GHSStartFetchingPageNotification;
     GHSCredentialStore *_credentialStore;
 }
 
+@property (weak) IBOutlet NSSearchField *searchField;
 @property (strong) NSMutableArray *repositories;
 @property (copy) NSArray *currentRepsitories;
 @property (weak) IBOutlet NSTableView *tableView;
