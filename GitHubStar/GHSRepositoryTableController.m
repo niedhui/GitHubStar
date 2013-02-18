@@ -69,15 +69,24 @@ NSString * const GHSStartFetchingPageNotification = @"GHSStartFetchingPageNotifi
     return cellView;
 }
 
-- (void) tableViewSelectionDidChange:(NSNotification *)notification {
+//- (void) tableViewSelectionDidChange:(NSNotification *)notification {
+//    NSInteger selectedRow = [self.tableView selectedRow];
+//    if (selectedRow > -1) {
+//        GHSRepository *repo = self.currentRepsitories[selectedRow];
+//        NSLog(@"selected %@", repo.name);
+//        [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString:repo.HTMLURLString]];
+//    }
+//}
+
+- (IBAction)onClickRow:(id) sender {
     NSInteger selectedRow = [self.tableView selectedRow];
     if (selectedRow > -1) {
         GHSRepository *repo = self.currentRepsitories[selectedRow];
         NSLog(@"selected %@", repo.name);
         [[NSWorkspace sharedWorkspace] openURL: [NSURL URLWithString:repo.HTMLURLString]];
     }
+    
 }
-
 - (void)tableView:(NSTableView *)tableView sortDescriptorsDidChange:(NSArray *)oldDescriptors {
     NSArray *newDescriptors = [tableView sortDescriptors];
     self.currentRepsitories = [self.currentRepsitories sortedArrayUsingDescriptors:newDescriptors];
@@ -157,10 +166,15 @@ NSString * const GHSStartFetchingPageNotification = @"GHSStartFetchingPageNotifi
     self.statusLabel.stringValue = [NSString stringWithFormat:@"start fetching page %@", page];
 }
 
+# pragma mark text delegate
+
+//- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command {
+//    NSLog(@"here");
+//    return YES;
+//}
+
 - (void) dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
-
 
 @end

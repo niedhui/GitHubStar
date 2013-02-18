@@ -14,7 +14,7 @@ extern NSString * const GHSStartFetchingNotification;
 extern NSString * const GHSFinishFetchingNotification;
 extern NSString * const GHSStartFetchingPageNotification;
 
-@interface GHSRepositoryTableController : NSWindowController<NSTableViewDataSource, NSTableViewDelegate> {
+@interface GHSRepositoryTableController : NSWindowController<NSTableViewDataSource, NSTableViewDelegate, NSControlTextEditingDelegate> {
     BOOL _repositories_synched;
     GHSApiClient *_apiClient;
     GHSCredentialStore *_credentialStore;

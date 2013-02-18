@@ -29,6 +29,7 @@
 		C7A8488E16776A8000C0F49E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A8488D16776A8000C0F49E /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C7A8489116776EFD00C0F49E /* GHSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A8489016776EFD00C0F49E /* GHSRepository.m */; };
 		C7B3B0751680B946009E6BC3 /* GHSCredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B3B0741680B946009E6BC3 /* GHSCredentialStore.m */; };
+		C7D4485C169B11CB00B45703 /* GHSSearchField.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D4485B169B11CB00B45703 /* GHSSearchField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		C7A8489016776EFD00C0F49E /* GHSRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSRepository.m; sourceTree = "<group>"; };
 		C7B3B0731680B946009E6BC3 /* GHSCredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHSCredentialStore.h; sourceTree = "<group>"; };
 		C7B3B0741680B946009E6BC3 /* GHSCredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSCredentialStore.m; sourceTree = "<group>"; };
+		C7D4485A169B11CB00B45703 /* GHSSearchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHSSearchField.h; sourceTree = "<group>"; };
+		C7D4485B169B11CB00B45703 /* GHSSearchField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHSSearchField.m; sourceTree = "<group>"; };
 		D44623C4BC63470E86ED1C63 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -177,6 +180,8 @@
 				C7733762168C98E6001E37B6 /* GHSRepositoryTableController.xib */,
 				C7140E2316971C8B00143904 /* GHSRepoCellView.h */,
 				C7140E2416971C8B00143904 /* GHSRepoCellView.m */,
+				C7D4485A169B11CB00B45703 /* GHSSearchField.h */,
+				C7D4485B169B11CB00B45703 /* GHSSearchField.m */,
 			);
 			path = GitHubStar;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				C73F9BF0167F761200B7F67A /* GHSPreferenceController.m in Sources */,
 				C7B3B0751680B946009E6BC3 /* GHSCredentialStore.m in Sources */,
 				C7140E2516971C8B00143904 /* GHSRepoCellView.m in Sources */,
+				C7D4485C169B11CB00B45703 /* GHSSearchField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
