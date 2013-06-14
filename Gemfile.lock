@@ -2,17 +2,13 @@ GEM
   remote: http://ruby.taobao.org/
   specs:
     bubble-wrap (1.3.0)
-    motion-bundler (0.1.5)
     motion_model (0.2.6)
-    sugarcube (0.20.22)
     teacup (2.0.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bubble-wrap
-  motion-bundler
+  bubble-wrap (~> 1.3.0)
   motion_model
-  sugarcube
   teacup
