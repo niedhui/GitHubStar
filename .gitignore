@@ -16,3 +16,16 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+.repl_history
+tags
+app/pixate_code.rb
+resources/*.nib
+resources/*.momd
+resources/*.storyboardc
+nbproject
+.redcar
+#*#
+*~
+*.sw[po]
+.eprj
+.sass-cache
