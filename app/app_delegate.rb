@@ -2,6 +2,7 @@ class AppDelegate
   def applicationDidFinishLaunching(notification)
     buildMenu
     buildWindow
+    init_api_client
     check_credential
   end
 
@@ -17,5 +18,9 @@ class AppDelegate
   def check_credential
     @preferences_controller ||= PreferencesController.new
     @preferences_controller.showWindow(self)
+  end
+
+  def init_api_client
+    APIClient.build_shared
   end
 end

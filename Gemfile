@@ -7,6 +7,7 @@ gem 'teacup'
 #gem 'sugarcube'
 gem 'motion_model'
 gem 'motion-layout'
+gem 'afmotion'
 
 group :motion do
 
