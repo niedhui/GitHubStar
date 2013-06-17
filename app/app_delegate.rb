@@ -2,6 +2,7 @@ class AppDelegate
   def applicationDidFinishLaunching(notification)
     buildMenu
     buildWindow
+    check_credential
   end
 
   def buildWindow
@@ -11,5 +12,10 @@ class AppDelegate
       defer: false)
     @mainWindow.title = NSBundle.mainBundle.infoDictionary['CFBundleName']
     @mainWindow.orderFrontRegardless
+  end
+
+  def check_credential
+    @preferences_controller ||= PreferencesController.new
+    @preferences_controller.showWindow(self)
   end
 end
