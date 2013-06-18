@@ -16,11 +16,15 @@ class AppDelegate
   end
 
   def check_credential
-    @preferences_controller ||= PreferencesController.new
-    @preferences_controller.showWindow(self)
+    openPreferences(self)
   end
 
   def init_api_client
     APIClient.build_shared
+  end
+
+  def openPreferences(sender)
+    @preferences_controller ||= PreferencesController.new
+    @preferences_controller.showWindow(self)
   end
 end
